@@ -12,8 +12,14 @@ const { NotImplementedError } = require("../extensions");
  * Strings have 3 common characters - 2 "a"s and 1 "c".
  */
 function getCommonCharacterCount(s1, s2) {
-  throw new NotImplementedError("Nope")
-  // remove line with error and write your code here
+  let counter = 0;
+    for (let i = 0; i < s1.length; i++) {
+        if (s2.includes(s1[i])) {
+            counter++;
+            s2 = s2.replace(s1[i], '');
+        }
+    }
+    return counter;
 }
 
 module.exports = {
