@@ -17,7 +17,7 @@ function getSeason(date) {
   }
   
   // Check if date is invalid
-  if (Object.prototype.toString.call(date) !== '[object Date]' || isNaN(date.getTime())) {
+  if (Object.prototype.toString.call(date) !== '[object Date]' || !date.getTime || Object.getOwnPropertyNames(date).length > 0) {
     throw new Error('Invalid date!');
   }
   
